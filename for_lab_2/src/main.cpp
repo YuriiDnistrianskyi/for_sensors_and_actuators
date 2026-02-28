@@ -29,4 +29,3 @@ void loop() {
     Serial.println("RPM: " + String(rpm)); 
   }
 }
-

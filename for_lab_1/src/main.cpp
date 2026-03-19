@@ -1,9 +1,10 @@
 #include <Arduino.h>
 #define DEBOUNCE 300
 
-uint8_t ledGreenPin = D5;
-uint8_t ledRedPin = D6;
-uint8_t sensorPin = D2;
+
+uint8_t ledGreenPin = 18; 
+uint8_t ledRedPin = 4;
+uint8_t sensorPin = 5;
 
 bool ledPinHigh = 0;
 uint32_t lastReadSensor = 0;
@@ -12,6 +13,7 @@ void setup()
 {
   pinMode(ledGreenPin, OUTPUT);
   pinMode(ledRedPin, OUTPUT);
+  pinMode(sensorPin, INPUT);
 }
 
 void loop() 
@@ -21,7 +23,7 @@ void loop()
   {
     lastReadSensor = readSensorTime;
 
-    uint8_t state = digitalRead(sensorPin); //
+    uint8_t state = digitalRead(sensorPin); 
     if (state == 1) 
     {
       if (ledPinHigh != true) 
@@ -40,6 +42,5 @@ void loop()
         digitalWrite(ledRedPin, HIGH);
       }
     }
-
   }
 }

@@ -26,7 +26,7 @@ void loop() {
 
     uint16_t potentiometerValue = analogRead(POTENTIOMETER_PIN);
     uint16_t targetAngle = map(potentiometerValue, 0, 1023, 0, 180);
-    // targetAngle = constrain(targetAngle, 0, 180);
+    targetAngle = constrain(targetAngle, 0, 180);
 
     if (targetAngle != lastAngle) 
     {

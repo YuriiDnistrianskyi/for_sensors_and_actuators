@@ -14,7 +14,7 @@ uint32_t lastSerialPrintTime = 0;
 void setup() {
   Serial.begin(115200);
   delay(200);
-  myServo.attach(SERVO_PIN, 500, 2500);
+  myServo.attach(SERVO_PIN, 500, 2400);
   myServo.write(0);
 }
 
